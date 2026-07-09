@@ -12,7 +12,7 @@ const NavBar =()=>{
  
      {user &&(
     <div className="flex gap-2">
-      <p className="flex px-0 py-2"> Welcome,{user.firstName +  user.lastName}</p>
+      <p className="flex px-0 py-2"> Welcome,{user.firstName}</p>
      <div className="dropdown dropdown-end mx-6">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar flex">
                 <div className="w-10 rounded-full">
