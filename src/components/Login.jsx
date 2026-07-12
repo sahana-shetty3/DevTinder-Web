@@ -10,6 +10,7 @@ const Login =()=>{
     const [password,setPassword]=useState("Shama@123");
     const navigate = useNavigate();
     const dispatch =useDispatch();
+    const [error,setError]=useState("")
 
     const handleLogin= async ()=>{
         
@@ -24,7 +25,8 @@ const Login =()=>{
    return navigate("/");
 
     }catch(err){
-        console.log(err);
+        setError(err?.response?.data || "Something went wrong");
+      
     };
 
 
@@ -48,6 +50,7 @@ const Login =()=>{
             </fieldset>  
         </div>
         
+        <p className="text-red-500">{error}</p>
         <div className="card-actions justify-center">
          <button className="btn btn-primary"onClick={handleLogin} >Login</button>
        </div>
