@@ -37,7 +37,7 @@ const NavBar =()=>{
                 <div className="w-10 rounded-full">
           <img
             alt="user photo"
-            src={user.photoUrl} />
+            src={user?.photourl || "https://placeholder.com/150"} />
         </div>
       </div>
       <ul
