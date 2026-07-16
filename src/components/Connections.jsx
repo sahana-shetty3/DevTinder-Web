@@ -21,22 +21,32 @@ const Connections =()=>{
         console.log(err);
     }
     }
-    if(!connection)return;
-    if(connection.length === 0)return<h1>No onnections found</h1>
     useEffect(()=>{
         fetchConnection();
     },[]);
+    if(!connection)return;
+    if(connection.length === 0)return<h1>No onnections found</h1>
+    
     return(
-        <div className="justify-center my-10">
-            <h1 className="text-bold text-3xl text-purple-300">Connections</h1>
+        <div className="text-center my-10">
+            <h1 className="text-bold text-4xl text-black">Connections</h1>
 
         {connection.map((connection)=>{
             const {firstName,lastName,photourl,age,gender,about}= connection;
             return(
-            <div>
-                <img alt="photo"className="w-20 h-20"src={photourl}></img>
-                <h2>{firstName+" "+lastName}</h2>
+            <div className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto">
+              <div>
+                  <img alt="photo"
+                  className="w-20 h-20 rounded-full"
+                  src={photourl}></img>
+              </div>
+              <div className="text-left mx-4">
+                <h2 className="font-bold text-xl">{firstName+" "+lastName}</h2>
+                {age && gender && <p>{age+","+gender}</p>}
                 <p>{about}</p>
+              </div>
+
+
             
             </div>
         )})}
