@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const requestSlice = createSlice({
-    name:"requests",
+    name:"request",
     initialState:null,
     reducers:{
         addRequests:(state,action)=>action.payload,

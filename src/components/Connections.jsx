@@ -32,9 +32,9 @@ const Connections =()=>{
             <h1 className="text-bold text-4xl text-black">Connections</h1>
 
         {connection.map((connection)=>{
-            const {firstName,lastName,photourl,age,gender,about}= connection;
+            const {_id,firstName,lastName,photourl,age,gender,about}= connection;
             return(
-            <div className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto">
+            <div key={_id} className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto">
               <div>
                   <img alt="photo"
                   className="w-20 h-20 rounded-full"

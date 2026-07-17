@@ -8,11 +8,10 @@ const appStore = configureStore({
         user:userReducer,
         feed:feedReducer,
         connection:connectionReducer,
-        requests:requestReducer,
+        request:requestReducer,
 
     },
 })
 
 export default appStore;
 
-9637158849
