@@ -21,7 +21,10 @@ const Feed = ()=>{
     }
     useEffect(()=>{
         getFeed();
-    },[])
+    },[]);
+
+    if(!feed) return;
+    if(feed.length <= 0)return <h1>No More Users Found!!</h1>
 
     return(
         feed && 
