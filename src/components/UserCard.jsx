@@ -1,6 +1,21 @@
+import axios from "axios";
+import { BASE_URL } from "../utils/constants";
+
 const UserCard =({user})=>{
   const {firstName,lastName,photourl,age,gender,about}=user;
-   
+  
+  const handleRequest = async ()=>{
+    try{
+      
+      const res = await axios.post(BASE_URL+"/request/send/"+status+"/"+useId,{},
+        {withCredentials:true});
+
+      
+
+    }catch(err){
+
+    }
+  }
     return(
     <div className="card bg-base-400 w-96 shadow-sm">
   <figure>
