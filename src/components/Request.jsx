@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { BASE_URL } from "../utils/constants";
-import { addRequests } from "../utils/requestSlice";
+import { addRequests, removeRequest } from "../utils/requestSlice";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -15,6 +15,8 @@ const Request = ()=>{
 
         const res= axios.post(BASE_URL+"/request/review/"+status+"/"+_id,{},
         {withCredentials:true})
+        
+        dispatch(removeRequest(_id));
 
         }catch(err){
 
