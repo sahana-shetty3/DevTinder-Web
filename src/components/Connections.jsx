@@ -9,6 +9,7 @@ const Connections =()=>{
 
     const connection = useSelector((store)=>store.connection);
     const dispatch= useDispatch();
+    
     const fetchConnection = async ()=>{
     try{
            const res = await axios.get(BASE_URL+"/user/connection",
