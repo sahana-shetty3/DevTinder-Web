@@ -25,6 +25,7 @@ const Connections =()=>{
     useEffect(()=>{
         fetchConnection();
     },[]);
+    //CONNECTION DAA DOESNOT EXIST JUST RETRN
     if(!connection)return;
     if(connection.length === 0)return<h1>No onnections found</h1>
     

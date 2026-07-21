@@ -8,12 +8,12 @@ const Request = ()=>{
     const request=useSelector((store)=>store.request)
     const dispatch=useDispatch();
 
-    const [showButtons,setShowButtons]=useState("")
+
 
     const reviewRequest=async(status,_id)=>{
     try{
 
-        const res= axios.post(BASE_URL+"/request/review/"+status+"/"+_id,{},
+        const res= await axios.post(BASE_URL+"/request/review/"+status+"/"+_id,{},
         {withCredentials:true})
         
         dispatch(removeRequest(_id));
@@ -38,7 +38,7 @@ const Request = ()=>{
         fetchRequests()
     },[])
    if(!request)return;
-    if(request.length === 0)return<h1>No request found</h1>
+    if(request.length === 0)return<h1 className="flex justify-center">No request found</h1>
     
     return(
         <div className="text-center my-10">
@@ -48,7 +48,7 @@ const Request = ()=>{
             const {_id,fromUserId}=request;
 
             if(!fromUserId)return null;
-            const {firstName,lastName,photourl,age,gender,about}= fromUserId;
+            const {firstName,lastName,photourl,age,gender,about}=request.fromUserId;
             
             return(
             <div key={_id} className="flex justify-between items-center m-4 p-4 rounded-lg bg-base-300 w-2/3 mx-auto">
